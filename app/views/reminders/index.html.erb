@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reminders</h1>
+
+<% @reminders.each do |reminder| %>
+  <%= render partial: 'form', locals: { reminder: reminder } %>
+<% end %>
+
+<%= link_to 'New Reminder', new_reminder_path %>
