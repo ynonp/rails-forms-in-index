@@ -15,6 +15,9 @@ class RemindersController < ApplicationController
   # GET /reminders/new
   def new
     @reminder = Reminder.new
+    if request.xhr?
+      return render template: 'reminders/_form', locals: { reminder: @reminder }
+    end
   end
 
   # GET /reminders/1/edit

@@ -1,5 +1,7 @@
-<% @reminders.each do |reminder| %>
-  <%= render partial: 'form', locals: { reminder: reminder } %>
-<% end %>
+<div class="reminders-index">
+  <% @reminders.each do |reminder| %>
+    <%= render partial: 'form', locals: { reminder: reminder } %>
+  <% end %>
+</div>
 
-<%= link_to 'New Reminder', new_reminder_path %>
+<%= link_to 'New Reminder', new_reminder_path, class: 'ajax-new-reminder' %>
